@@ -23,7 +23,7 @@
     <img src="img/Rectangle 1.png" alt="Logo Kalanso Space" width="200">
     <h1>Bienvenue sur le site officiel Kalanso Space</h1>
   </div>
-<h1>Salut, ${utilisateur.prenom} ${utilisateur.nom} !</h1>
+<h1>Salut, ${utilisateur.getPrenom()} ${utilisateur.getNom()} !</h1>
   <!-- Liste des apprenants inscrits -->
   <h2>Liste des apprenants inscrits</h2>
    <table>
@@ -33,7 +33,7 @@
             <th>Pseudo</th>
             <th>Email</th>
         </tr>
-        <c:forEach var="utilisateur" items="${utilisateurs}">
+        <c:forEach var="utilisateur" items="${listUtilisateur}">
             <tr>
                 <td>${utilisateur.nom}</td>
                 <td>${utilisateur.prenom}</td>

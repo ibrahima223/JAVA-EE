@@ -15,6 +15,9 @@ public class Utilisateur {
 			this.email = email;
 			this.motDePasse = motDePasse;
 		}
+		public Utilisateur() {
+			// TODO Auto-generated constructor stub
+		}
 		public String getNom() {
 			return nom;
 		}

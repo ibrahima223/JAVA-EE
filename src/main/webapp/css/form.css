@@ -20,8 +20,8 @@ body {
 	background-color: #000;
 	display: grid;
 	place-items: center;
-	background-image: url('img/O3.jpg');
-	background-position: center center;
+	background-image: url('img/03.jpg');
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;

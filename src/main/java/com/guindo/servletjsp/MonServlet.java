@@ -18,11 +18,11 @@ public class MonServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<Utilisateur> utilisateursInscrits;
+	private List<Utilisateur> utilisateursInscrits = new ArrayList<>();
 
     @Override
     public void init() throws ServletException {
-        utilisateursInscrits = new ArrayList<>();
+        
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +34,6 @@ public class MonServlet extends HttpServlet {
         String motDePasse2 = request.getParameter("motdepasse2");
         
         HttpSession session = request.getSession();
-        session.setAttribute(nom, prenom);
 
         // Vérifier si le mot de passe est répété correctement
       
@@ -45,6 +44,7 @@ public class MonServlet extends HttpServlet {
 
         Utilisateur utilisateur = new Utilisateur(nom, prenom, pseudo, email, motDePasse);
         utilisateursInscrits.add(utilisateur);
+        session.setAttribute("listUtilisateur", utilisateursInscrits);
 
         // Ajouter l'utilisateur à la session
         request.getSession().setAttribute("utilisateur", utilisateur);

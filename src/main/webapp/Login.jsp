@@ -16,7 +16,7 @@
 				<c:if test="${param.error eq 'true'}">
        			 	<p style="color: red;">Identifiants invalides. Veuillez réessayer.</p>
    			 	</c:if>
-			<form class="form" action="login" method="post">
+			<form class="form" action="MonServlet3" method="post">
 
 				<div class="form__group">
 					<i class="ri-mail-line form__icon"></i>

@@ -17,10 +17,10 @@ body {
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.6rem;
 	color: #fff;
-	background-color: #000;
+	background-color: #FFA500;
 	display: grid;
 	place-items: center;
-	background-image: url('img/03.jpg');
+	background-image: url('./img/03.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -133,6 +133,8 @@ input {
 .form__switch a:hover {
 	text-decoration: underline;
 }
+
+
 @media screen and (min-width: 43.75em) {
 	.container::before {
 		height: 30rem;

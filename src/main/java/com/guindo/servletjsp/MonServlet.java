@@ -26,28 +26,30 @@ public class MonServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nom = request.getParameter("nom");
+        //Ajout des champs pour le formulaire
+    	String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String pseudo = request.getParameter("pseudo");
         String email = request.getParameter("email");
         String motDePasse = request.getParameter("motdepasse");
         String motDePasse2 = request.getParameter("motdepasse2");
-        
+        //Mise en place de la session
         HttpSession session = request.getSession();
 
-        // Vérifier si le mot de passe est répété correctement
+        // Vérification du mot de passe
       
         if (!motDePasse.equals(motDePasse2)) {
             response.sendRedirect(request.getContextPath() + "/Inscrire.jsp");
             return;
         }
-
         Utilisateur utilisateur = new Utilisateur(nom, prenom, pseudo, email, motDePasse);
         utilisateursInscrits.add(utilisateur);
         session.setAttribute("listUtilisateur", utilisateursInscrits);
 
         // Ajouter l'utilisateur à la session
+        
         request.getSession().setAttribute("utilisateur", utilisateur);
+        
         // Ajouter la liste des utilisateurs inscrits à l'attribut de la requête
         request.setAttribute("utilisateurs", utilisateursInscrits);
 

@@ -41,8 +41,11 @@ public class MonServlet3 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
 		String motdepasse = request.getParameter("motdepasse");
+	
+		//Création de la session pour la récupération des apprenants inscrits
 		HttpSession session = request.getSession();
 		Utilisateur user = new Utilisateur();
+		@SuppressWarnings("unchecked")
 		List<Utilisateur> utilisateursInscrits = (List<Utilisateur>) session.getAttribute("listUtilisateur");
 		
 		for(Utilisateur value: utilisateursInscrits) {
